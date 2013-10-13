@@ -1,0 +1,21 @@
+// The two tasks commented out show a way of explicitly calling the dependsOn method on the task loadTestData
+
+//task loadTestData << {
+//  println 'loading test data'
+//}
+
+
+//loadTestData.dependsOn {
+//   println 'create schema'
+//}
+
+//The quotes are required around the createSchema here otherwise the compiler is looking for an attribute on loadTestData rather than another task
+
+task loadTestData {
+   dependsOn 'createSchema'
+}
+
+task createSchema{
+    println 'create schema'
+}
+

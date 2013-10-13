@@ -1,0 +1,6 @@
+task initialiseDatabase
+
+initialiseDatabase << { println 'connect to database'}
+initialiseDatabase << { println 'update database schema' }
+initialiseDatabase { println 'configure new connection' }
+
