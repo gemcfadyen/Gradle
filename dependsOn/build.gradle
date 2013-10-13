@@ -11,7 +11,7 @@
 
 //The quotes are required around the createSchema here otherwise the compiler is looking for an attribute on loadTestData rather than another task
 
-task loadTestData {
+task loadTestData (description: 'a task that is dependant on another') {
    dependsOn 'createSchema'
 }
 
