@@ -15,7 +15,26 @@ task loadTestData {
    dependsOn 'createSchema'
 }
 
-task createSchema{
+// you need to use << here otherwise the createSchema is executed in a different lifecycle phase (configuration rather than the execution phase
+
+task createSchema << {
     println 'create schema'
+}
+
+createSchema.doFirst{
+  println 'pre-checks completed'
+}
+
+createSchema.doFirst{
+  println 'authentication validated'
+}
+
+createSchema{
+  doLast{
+     println 'finishing schema creation'
+  }
+  doLast{
+     println 'ending updates'
+  }
 }
 
