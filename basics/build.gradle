@@ -1,0 +1,15 @@
+task hello{
+      doLast{
+	println 'Hello World'
+      }
+}
+
+
+task shortcutHello << {
+     print 'Hello World in Shortcut task'
+}
+
+
+task dependencyHello(dependsOn: hello) << {
+      print('Have a nice day');
+}
