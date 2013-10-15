@@ -1,0 +1,10 @@
+task wrapper(type: Wrapper){
+    gradleVersion = '1.8'
+}
+
+task hello{
+     doLast{
+       println 'Hello World'
+     }
+}
+
